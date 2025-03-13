@@ -1,0 +1,22 @@
+CREATE TABLE `food_plan` (
+  `id` int(11) NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `measurement` varchar(255) NOT NULL,
+  `amount` float NOT NULL,
+  `total` float NOT NULL,
+  `calories` float DEFAULT NULL,
+  `protein` float DEFAULT NULL,
+  `fat` float DEFAULT NULL,
+  `carbohydrates` float DEFAULT NULL,
+  `fiber` float DEFAULT NULL,
+  `sugars` float DEFAULT NULL,
+  `cholesterol` float DEFAULT NULL,
+  `sodium` float DEFAULT NULL,
+  `vitamin_c` float DEFAULT NULL,
+  `calcium` float DEFAULT NULL,
+  `iron` float DEFAULT NULL,
+  `potassium` float DEFAULT NULL,
+  `magnesium` float DEFAULT NULL,
+  `nitrogen` float DEFAULT NULL,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
