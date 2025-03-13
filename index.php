@@ -19,7 +19,7 @@ if (isset($_GET['submit_calories'])) {
         if ($row = $result->fetch_assoc()) {
             $total_calories = $row['total_calories'];
             if ($total_calories > 0) {
-                $caloriesInfo = "<p>Your total calories consumption until now is $total_calories kcal</p>"; //Indicamos total de KCAL consumidas con base en los alimentos registrados
+                $caloriesInfo = "<p>Your total calories consumption until now is " . number_format($total_calories, 2, '.', '') . " kcal</p>"; //Indicamos total de KCAL consumidas con base en los alimentos registrados
             } else {
                 $caloriesInfo = "<p>No calories has been consumed.</p>"; //Si no ha consumido calorias lo indicamos al usuario
             }
@@ -77,8 +77,10 @@ if (isset($_POST['submit_food'])) {
     // Decodificar la respuesta JSON de la API
     $result = json_decode($response, true);
 
+    $nutrientes=$result['foods'][0]['foodNutrients'];
+
     // Si encontramos la información de nutrientes
-    if (isset($result['foods'][0]['foodNutrients'])) {
+    if (!empty($nutrientes)) {
 
         $nutritionInfo = '';
 
