@@ -1,5 +1,6 @@
 <?php require_once('header.php'); ?>
 <?php include_once('error.php'); ?>
+<?php include_once('functions.php'); ?>
 
 <?php
 // Verificar si el formulario fue enviado
